@@ -55,9 +55,9 @@ changelog:
 # Make sure to check the documentation at https://goreleaser.com
 # .goreleaser.yaml
 github_urls:
-  api: https://api.github.com/
-  upload: https://api.github.com/uploads/
-  download: https://github.com/
+  # api: https://api.github.com/
+  # upload: https://api.github.com/uploads/
+  # download: https://github.com/
   # set to true if you use a self-signed certificate
   skip_tls_verify: false
 
