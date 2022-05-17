@@ -12,6 +12,11 @@ import (
 	"github.com/spyzhov/ajson"
 )
 
+var GitCommit = ""
+var GitLastTag = ""
+var GitExactTag = ""
+var Date = ""
+
 var version = "v0.7.1"
 
 func usage() {
