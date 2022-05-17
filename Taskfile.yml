@@ -24,7 +24,7 @@ tasks:
       - task: build
       - cmd: rm {{.targetbin}}/{{.buildname}}
         ignore_error: true
-      - cp ./dist/sorthosts_{{OS}}_{{ARCH}}/{{.buildname}} {{.targetbin}}
+      - cp ./dist/{{.APPNAME}}_{{OS}}_{{ARCH}}/{{.buildname}} {{.targetbin}}
   release:
     dir: .
     desc: release to github using goreleaser
