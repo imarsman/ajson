@@ -1,0 +1,32 @@
+# https://taskfile.dev
+
+version: "3"
+
+vars:
+  GREETING: Hello, World!
+  APPNAME: ajson
+  targetbin: ~/bin
+  buildname: ajson
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+  build:
+    # dir: ./cmd/sorthosts
+    cmds:
+      - goreleaser release --snapshot --rm-dist
+  install:
+    dir: .
+    desc: "install in local bin directory"
+    cmds:
+      - task: build
+      - cmd: rm {{.targetbin}}/{{.buildname}}
+        ignore_error: true
+      - cp ./dist/sorthosts_{{OS}}_{{ARCH}}/{{.buildname}} {{.targetbin}}
+  release:
+    dir: .
+    desc: release to github using goreleaser
+    cmds:
+      - goreleaser release --rm-dist
