@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"runtime"
 	"strings"
 
 	"github.com/imarsman/ajson"
@@ -34,11 +35,16 @@ Examples:
   ajson "$" example.json
   echo "3" | ajson "2 * pi * $"`
 	} else if inArgs("version", "-version", "--version") {
-		text = fmt.Sprintf(`ajson: Version %s
-Copyright (c) 2020 Pyzhov Stepan
-MIT License <https://github.com/spyzhov/ajson/blob/master/LICENSE>
+		text = fmt.Sprintf(`ajson:
+------
+Commit: %s
+Compile Date: %s
+OS: %s, Arch: %s
+Copyright (c) 2022 Ian Marsman
+Based almost completely on code from github.com/spyzhov/ajson
+MIT License <https://github.com/imarsman/ajson/blob/master/LICENSE>
 This is free software: you are free to change and redistribute it.
-There is NO WARRANTY, to the extent permitted by law.`, version)
+There is NO WARRANTY, to the extent permitted by law.`, GitCommit, Date, runtime.GOOS, runtime.GOARCH)
 	}
 	if text != "" {
 		fmt.Println(text)

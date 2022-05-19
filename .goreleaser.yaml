@@ -34,6 +34,9 @@ release:
   header: |
     ## ajson ({{ .Date }})
 
+    v0.7.6
+    Updated version information
+
     v0.7.5
     Fixed bad dependencies following fork
 
