@@ -34,6 +34,9 @@ release:
   header: |
     ## ajson ({{ .Date }})
 
+    v0.7.5
+    Fixed bad dependencies following fork
+
     v0.7.2
     Builds for macos and linux
 
