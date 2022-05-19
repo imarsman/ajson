@@ -9,7 +9,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/spyzhov/ajson"
+	"github.com/imarsman/ajson"
 )
 
 var GitCommit = ""

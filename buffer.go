@@ -4,7 +4,7 @@ import (
 	"io"
 	"strings"
 
-	. "github.com/spyzhov/ajson/internal"
+	. "github.com/imarsman/ajson/internal"
 )
 
 type buffer struct {
