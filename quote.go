@@ -1,6 +1,8 @@
 package ajson
 
-import "unicode/utf8"
+import (
+	"unicode/utf8"
+)
 
 // This file was copied from encoding/json library.
 // fixme: https://github.com/spyzhov/ajson/issues/13
