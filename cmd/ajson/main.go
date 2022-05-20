@@ -13,9 +13,16 @@ import (
 	"github.com/imarsman/ajson"
 )
 
+// GitCommit the latest commit at compile time
 var GitCommit = ""
+
+// GitLastTag latest tag
 var GitLastTag = ""
+
+// GitExactTag the exact git tag
 var GitExactTag = ""
+
+// Date the compile date
 var Date = ""
 
 var version = "v0.7.1"
