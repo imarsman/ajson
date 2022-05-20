@@ -7,6 +7,26 @@ import (
 	"strings"
 )
 
+func init() {
+	// AddOperation("=~", 3, false, regexMatchOp)
+}
+
+// func regexMatchOp(left *Node, right *Node) (node *Node, err error) {
+// 	pattern, err := right.GetString()
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	val, err := left.GetString()
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	res, err := regexp.MatchString(pattern, val)
+// 	if err != nil {
+// 		return nil, err
+// 	}
+// 	return BoolNode("eq", res), nil
+// }
+
 // JSONPath returns slice of founded elements in current JSON data, by it's JSONPath.
 //
 // JSONPath described at http://goessner.net/articles/JsonPath/
@@ -580,6 +600,7 @@ func ApplyJSONPath(node *Node, commands []string) (result []*Node, err error) {
 
 // Eval evaluate expression `@.price == 19.95 && @.color == 'red'` to the result value i.e. Bool(true), Numeric(3.14), etc.
 func Eval(node *Node, cmd string) (result *Node, err error) {
+	// AddOperation("=~", 4, false, regexMatchOp)
 	calc, err := newBuffer([]byte(cmd)).rpn()
 	if err != nil {
 		return nil, err
